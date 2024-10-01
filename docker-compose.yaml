@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  django:
+    image: python_wsdl:v1
+    container_name: wsdl-service
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+
+    volumes:
+      - "/logs/python_wsdl:/project/logs"
+
+
